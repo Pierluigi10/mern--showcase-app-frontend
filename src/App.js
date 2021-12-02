@@ -1,12 +1,24 @@
 import { useState } from "react";
 import "./App.scss";
 
-
-
-
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleUsername = (e) => {
+    const _username = e.target.value;
+    setUsername(_username);
+  };
+
+  const handlePassword = (e) => {
+    const _password = e.target.value;
+    setPassword(_password);
+  };
+
+  const handleLoginButton = (e) => {
+    e.preventDefault();
+    console.log("login on backend");
+  };
 
   return (
     <div className="App">
