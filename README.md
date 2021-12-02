@@ -6,3 +6,17 @@
 
 
 
+
+
+### Check also the backend code:
+- [Backend](https://github.com/Pierluigi10/mern-showcase-app-backend) 
+
+
+
+
+
+### Source:  [onespace](https://onespace.netlify.app/)
+
+- [Create React app with user authentication and authorization](https://onespace.netlify.app/howtos?id=446)
+
+
