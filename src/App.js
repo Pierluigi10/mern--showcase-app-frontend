@@ -140,6 +140,35 @@ function App() {
               </div>
             </>
           )}
+          {currentUserIsInGroup("contentEditors") && (
+            <>
+              <div className="panel">
+                <h3>Content Editor Section:</h3>
+                <div>
+                  <button>Edit Welcome Page</button>
+                </div>
+                <div>
+                  <button>Create New Page</button>
+                </div>
+              </div>
+            </>
+          )}
+          {currentUserIsInGroup("admins") && (
+            <>
+              <div className="panel">
+                <h3>Admin Section:</h3>
+                <div>
+                  <button>Create users</button>
+                </div>
+                <div>
+                  <button>Edit users</button>
+                </div>
+                <div>
+                  <button>Delete users</button>
+                </div>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
