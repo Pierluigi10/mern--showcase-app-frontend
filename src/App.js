@@ -127,6 +127,19 @@ function App() {
               </div>
             </>
           )}
+          {currentUserIsInGroup("members") && (
+            <>
+              <div className="panel">
+                <h3>Current Site News for Members</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Neque explicabo voluptate quia asperiores sit! Vel molestiae
+                  labore ratione non dolores? Exercitationem soluta quo id
+                  laboriosam, autem perferendis? Fuga, suscipit ipsa.
+                </p>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
