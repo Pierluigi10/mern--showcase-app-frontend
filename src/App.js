@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Current User: {currentUser.firstName} {currentUser.lastName}</h2>
       <form>
         <fieldset>
           <legend>Login</legend>
