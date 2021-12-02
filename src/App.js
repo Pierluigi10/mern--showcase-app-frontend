@@ -6,7 +6,6 @@ function App() {
   const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState({});
 
-
   useEffect(() => {
     (async () => {
       const requestOptions = {
@@ -43,6 +42,7 @@ function App() {
     e.preventDefault();
     const requestOptions = {
       method: "POST",
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     };
