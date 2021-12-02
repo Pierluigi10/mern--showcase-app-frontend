@@ -68,6 +68,8 @@ function App() {
       requestOptions
     );
     if (response.ok) {
+      setUsername("");
+      setPassword("");
       const _currentUser = await response.json();
       setCurrentUser((prev) => ({ ...prev, ..._currentUser }));
     }
