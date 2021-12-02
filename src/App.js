@@ -60,35 +60,42 @@ function App() {
 
   return (
     <div className="App">
-      <h2>
-        Current User: {currentUser.firstName} {currentUser.lastName}
-      </h2>
-      <form>
-        <fieldset>
-          <legend>Login</legend>
-          <div className="row">
-            <label htmlFor="username">Name</label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={handleUsername}
-            />
-          </div>
-          <div className="row">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              onChange={handlePassword}
-              value={password}
-            />
-          </div>
-          <div className="buttonRow">
-            <button onClick={handleLoginButton}>Login</button>
-          </div>
-        </fieldset>
-      </form>
+      {currentUser.username && (
+        <>
+          <h2>
+            Current User: {currentUser.firstName} {currentUser.lastName}
+          </h2>
+
+          {currentUserIsInGroup("loggedOutUsers") && (
+            <form>
+              <fieldset>
+                <legend>Login</legend>
+                <div className="row">
+                  <label htmlFor="username">Name</label>
+                  <input
+                    type="text"
+                    id="username"
+                    value={username}
+                    onChange={handleUsername}
+                  />
+                </div>
+                <div className="row">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    onChange={handlePassword}
+                    value={password}
+                  />
+                </div>
+                <div className="buttonRow">
+                  <button onClick={handleLoginButton}>Login</button>
+                </div>
+              </fieldset>
+            </form>
+          )}
+        </>
+      )}
     </div>
   );
 }
