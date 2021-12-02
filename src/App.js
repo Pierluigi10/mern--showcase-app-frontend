@@ -23,6 +23,13 @@ function App() {
     })();
   }, []);
 
+  const currentUserIsInGroup = (accessGroup) => {
+    const accessGroupArray = currentUser.accessGroups
+      .split(",")
+      .map((m) => m.trim());
+    return accessGroupArray.includes(accessGroup);
+  };
+
   const handleUsername = (e) => {
     const _username = e.target.value;
     setUsername(_username);
