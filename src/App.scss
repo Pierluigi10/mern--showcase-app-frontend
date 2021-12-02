@@ -43,7 +43,7 @@ body {
 						&::after {
 							content: ":";
 						}
-						width: 90px;
+						width: 120px;
 						margin: 0 0 10px 0;
 					}
 					input {
@@ -51,10 +51,10 @@ body {
 						width: 300px;
 					}
 				}
-				.note {
-					font-size: 1rem;
-					margin: 0 0 20px 97px;
-				}
+				// .note {
+				// 	font-size: 1rem;
+				// 	margin: 0 0 20px 97px;
+				// }
 				.invalid input {
 					color: red;
 				}
