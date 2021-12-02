@@ -4,6 +4,7 @@ import "./App.scss";
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
 
   const handleUsername = (e) => {
     const _username = e.target.value;
@@ -15,9 +16,21 @@ function App() {
     setPassword(_password);
   };
 
-  const handleLoginButton = (e) => {
+  // const handleLoginButton = (e) => {
+  //   e.preventDefault();
+  //   console.log("login on backend");
+  // };
+
+  const handleLoginButton = async (e) => {
     e.preventDefault();
-    console.log("login on backend");
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    };
+    const response = await fetch("http://localhost:3003/login", requestOptions);
+    const _currentUser = await response.json();
+    setCurrentUser((prev) => ({ ...prev, ..._currentUser }));
   };
 
   return (
