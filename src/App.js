@@ -110,10 +110,22 @@ function App() {
               </fieldset>
             </form>
           )}
+
           {currentUserIsInGroup("loggedInUsers") && (
             <div>
               <button onClick={handleLogoutButton}>Logout</button>
             </div>
+          )}
+          {currentUserIsInGroup("loggedOutUsers") && (
+            <div className="panel">Welcome to this site.</div>
+          )}
+          {currentUserIsInGroup("notApprovedUsers") && (
+            <>
+              <div className="panel">
+                <h3>Thank you for registering!</h3>
+                An administrator will approve your account as soon as possible.
+              </div>
+            </>
           )}
         </>
       )}
