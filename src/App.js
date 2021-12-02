@@ -58,6 +58,20 @@ function App() {
     setCurrentUser((prev) => ({ ...prev, ..._currentUser }));
   };
 
+  const handleLogoutButton = async (e) => {
+    const requestOptions = {
+      method: "GET",
+      credentials: "include",
+    };
+    const response = await fetch(
+      "http://localhost:3003/logout",
+      requestOptions
+    );
+    if (response.ok) {
+      const _currentUser = await response.json();
+      setCurrentUser((prev) => ({ ...prev, ..._currentUser }));
+    }
+  };
   return (
     <div className="App">
       {currentUser.username && (
@@ -93,6 +107,11 @@ function App() {
                 </div>
               </fieldset>
             </form>
+          )}
+          {currentUserIsInGroup("loggedInUsers") && (
+            <div>
+              <button onClick={handleLogoutButton}>Logout</button>
+            </div>
           )}
         </>
       )}
